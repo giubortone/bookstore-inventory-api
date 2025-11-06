@@ -22,3 +22,14 @@ class BookSerializer(serializers.ModelSerializer):
         if len(cleaned) not in (10, 13) or not cleaned.isdigit():
             raise serializers.ValidationError("El ISBN debe tener 10 o 13 dígitos")
         return value
+    
+    def validate(self, attrs):
+        isbn = attrs.get("isbn")
+        if isbn:
+            qs = Book.objects.filter(isbn=isbn)
+            if self.instance:
+                qs = qs.exclude(pk=self.instance.pk)
+            if qs.exists():
+                raise serializers.ValidationError({"isbn": "Ya existe un libro con este ISBN."})
+        return attrs
+
