@@ -9,10 +9,3 @@ class Migration(migrations.Migration):
         ('libros', '0001_initial'),
     ]
 
-    operations = [
-        migrations.RenameField(
-            model_name='book',
-            old_name='selling_price_ves',
-            new_name='selling_price_local',
-        ),
-    ]
