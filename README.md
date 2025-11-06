@@ -21,46 +21,28 @@ Docker & Docker Compose | - |
 2.  **Pasos de ejecuciOn:**
 docker compose up --build
 
-# Detener contenedores 
+**Detener contenedores**
 docker compose down
 
 
 
 ### 2. Ejecutar sin Docker 
-# Crear entorno virtual
+**Crear entorno virtual**
 python -m venv venv
 
-# Activar entorno virtual
+**Activar entorno virtual**
 venv\Scripts\activate       # Windows
 source venv/bin/activate    # Mac / Linux
 
-# Instalar dependencias
+**Instalar dependencias**
 pip install -r requirements.txt
 
-# Migrar BD
+**Migrar BD**
 python manage.py migrate
 
-# Ejecutar servidor
+**Ejecutar servidor**
 python manage.py runserver 0.0.0.0:8000
 
-
-
-
-3.  **Instalación de Dependencias:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Preparación de la Base de Datos:**
-    ```bash
-    python manage.py migrate
-    ```
-
-5.  **Iniciar el Servidor:**
-    ```bash
-    python manage.py runserver 0.0.0.0:8000
-    ```
----
 
 ## Endpoints de la API
 
@@ -77,7 +59,7 @@ python manage.py runserver 0.0.0.0:8000
 | `GET` | `/api/books/search?category={category}` | **Busca** libros por la categoría 
 
 
-**EJEMPLOS** 
+## EJEMPLOS
 **Crear un Libro  POST `/api/books/`** 
 {
   "title": "El Quijote",
@@ -144,7 +126,7 @@ Respuesta (200 OK):
   "calculation_timestamp": "2025-01-15T10:30:00Z"
 }
 
-* **Colección de Postman:**
+## Colección de Postman:
 Para probar fácilmente los endpoints, se incluye una colección de Postman lista para importar.
 Ruta del archivo: /postman/bookstore-inventory-api.postman_collection.json
 
